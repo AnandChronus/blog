@@ -1,0 +1,9 @@
+<% form_for((nc = Comment.new)) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.text_area :content, :rows => 2, :cols => 120 %>
+<% nc.blog_id = @blog.id %><br />
+    <%= f.submit 'Comment' %>
+  </p>
+<% end %>

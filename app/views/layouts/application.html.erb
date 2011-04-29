@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bubble Blog</title>
+    <%= stylesheet_link_tag "bb" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div class="header">
+      <% link_to blogs_path do %>
+      <img id="nob" alt="bubble image"  height="40" width="40" src="/images/bb.png" />
+      <strong>  Bubble Blog</strong>
+      <% end %>
+      <div class="user_nav">
+        <% if current_user.nil? %>
+          <%= link_to "Login", new_user_session_path %> |
+          <%= link_to "Sign up", new_user_path %>
+        <% else %>
+          Logged in as <%= current_user.login %> |
+          <%= link_to 'Logout', user_session_path, :method => :delete %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="main">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      Login or Sign-up to blog and comment |
+      <%= link_to 'Blogs', blogs_path %>
+    </div>
+
+</body>
+</html>

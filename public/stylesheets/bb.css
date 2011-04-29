@@ -1,0 +1,113 @@
+/* 
+    Document   : bb
+    Created on : 28 Apr, 2011, 2:19:51 PM
+    Author     : anand
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    margin: 0px 0px 0px 0px;
+}
+
+div.header {
+    background-color: #333;
+    color: white;
+    margin: 0px 0px 0px 0px;
+    padding: 20px 5% 20px 5%;
+    border-bottom: 4px #aaa solid;
+    font-size: 50px;
+}
+
+div.header a {
+    text-decoration: none;
+    color: white;
+}
+
+p.header{
+    background-color: #333;
+    color: white;
+    margin: 0px 0px 0px 0px;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 4px #aaa solid;
+}
+
+div.main {
+    background-color: #f3f3f3;
+    padding: 30px 10% 30px 10%;
+}
+
+div.footer {
+    background-color: #777;
+    color: white;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 5% 10px 5%;
+    font-size: small;
+    text-align: center;
+}
+
+p.blog_show_title {
+    text-align: center;
+}
+
+div.blog_show {
+    border: 1px solid black;
+    padding: 10px 5% 10px 5%;
+}
+
+h2.blog_show {
+    margin-bottom: 5px;
+}
+
+hr.blog_show {
+    background: none repeat scroll 0 0 #444444;
+    height: 5px;
+    padding-top: 5px;
+}
+
+div.blog_show_comments_section {
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+.list_line_even {
+  background:   #ddffdd;
+}
+
+.list_line_odd {
+  background:   #ddddff;
+}
+
+#posts_common {
+    padding: 10px 10px 10px 10px;
+    width: 99%;
+    border: solid white;
+}
+
+div.user_nav {
+    float: right;
+    font-size: medium;
+    padding-top: 10px;
+}
+
+div.user_nav a{
+    color: white;
+}
+
+#nob {
+    border: 0px 0px 0px 0px;
+    border-width: 0px 0px 0px 0px;
+}
+
+.fieldWithErrors input {
+    border: 1px solid red;
+}

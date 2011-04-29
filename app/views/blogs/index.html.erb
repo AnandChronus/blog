@@ -1,0 +1,13 @@
+<h1>Most recent blogs:</h1>
+<ul>
+<% @blogs.each do |blog| %>
+<b>
+  <li>
+  <%= link_to blog.title, blog %>
+  </li>
+</b>
+<% end %>
+</ul>
+<br />
+
+<%= link_to 'New blog', new_blog_path %>
