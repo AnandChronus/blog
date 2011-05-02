@@ -85,4 +85,12 @@ class BlogsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def inc_rating
+    @blog = Blog.find(session[:blog_id])
+    @blog.rating += 1
+    @blog.save
+    redirect_to @blog
+  end
+
 end

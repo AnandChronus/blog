@@ -11387,3 +11387,410 @@ Rendering blogs/index
   [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 09:45:12', `perishable_token` = 'IWiGY3vNCVgd8cauAIhT', `last_request_at` = '2011-05-02 09:45:11' WHERE `id` = 1[0m
   [4;35;1mSQL (47.3ms)[0m   [0mCOMMIT[0m
 Completed in 3833ms (View: 2611, DB: 580) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 16:36:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mBlog Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 11:06:02', `perishable_token` = 'NDtq1uyA9PhHzulg5ivd', `last_request_at` = '2011-05-02 11:06:02' WHERE `id` = 1[0m
+  [4;36;1mSQL (36.3ms)[0m   [0;1mCOMMIT[0m
+Completed in 90ms (View: 28, DB: 54) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:36:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 11:06:05', `perishable_token` = 'TjfqYSypjsCFkhfIWSQ5', `last_request_at` = '2011-05-02 11:06:05' WHERE `id` = 1[0m
+  [4;36;1mSQL (37.5ms)[0m   [0;1mCOMMIT[0m
+
+ActionView::TemplateError (undefined method `formtag' for #<ActionView::Base:0xb67a08e4>) on line #15 of app/views/blogs/show.html.erb:
+12:     <%= link_to 'Edit', edit_blog_path(@blog) %> |
+13:     <%= link_to 'Delete', @blog, :confirm => 'Are you sure?', :method => :delete %> |
+14:   <% else %>
+15:     <% formtag :action => :inc_rating do |f| %>
+16:     <%= f.submit %>
+17:     <% end %>
+18:   <% end %>
+
+    app/views/blogs/show.html.erb:15
+    app/controllers/blogs_controller.rb:21:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:36:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 11:06:40', `perishable_token` = 'khKTdZMvO7NoHSE2xJMT', `last_request_at` = '2011-05-02 11:06:40' WHERE `id` = 1[0m
+  [4;36;1mSQL (45.2ms)[0m   [0;1mCOMMIT[0m
+
+ActionView::TemplateError (undefined method `submit' for nil:NilClass) on line #16 of app/views/blogs/show.html.erb:
+13:     <%= link_to 'Delete', @blog, :confirm => 'Are you sure?', :method => :delete %> |
+14:   <% else %>
+15:     <% form_tag :action => :inc_rating do |f| %>
+16:     <%= f.submit %>
+17:     <% end %>
+18:   <% end %>
+19:     <% end %>
+
+    app/views/blogs/show.html.erb:16
+    app/views/blogs/show.html.erb:15
+    app/controllers/blogs_controller.rb:21:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (50.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:37:08) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 11:07:08', `perishable_token` = 'gx09rb3j27IkbQ1YIw4k', `last_request_at` = '2011-05-02 11:07:08' WHERE `id` = 1[0m
+  [4;36;1mSQL (44.8ms)[0m   [0;1mCOMMIT[0m
+
+ActionView::TemplateError (undefined method `submit_tag' for nil:NilClass) on line #16 of app/views/blogs/show.html.erb:
+13:     <%= link_to 'Delete', @blog, :confirm => 'Are you sure?', :method => :delete %> |
+14:   <% else %>
+15:     <% form_tag :action => :inc_rating do |f| %>
+16:     <%= f.submit_tag %>
+17:     <% end %>
+18:   <% end %>
+19:     <% end %>
+
+    app/views/blogs/show.html.erb:16
+    app/views/blogs/show.html.erb:15
+    app/controllers/blogs_controller.rb:21:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (132.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:37:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 11:07:11', `perishable_token` = 'svAWmY2OpTWNglHYnv', `last_request_at` = '2011-05-02 11:07:11' WHERE `id` = 1[0m
+  [4;36;1mSQL (34.7ms)[0m   [0;1mCOMMIT[0m
+
+ActionView::TemplateError (undefined method `submit_tag' for nil:NilClass) on line #16 of app/views/blogs/show.html.erb:
+13:     <%= link_to 'Delete', @blog, :confirm => 'Are you sure?', :method => :delete %> |
+14:   <% else %>
+15:     <% form_tag :action => :inc_rating do |f| %>
+16:     <%= f.submit_tag %>
+17:     <% end %>
+18:   <% end %>
+19:     <% end %>
+
+    app/views/blogs/show.html.erb:16
+    app/views/blogs/show.html.erb:15
+    app/controllers/blogs_controller.rb:21:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:38:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 11:08:42', `perishable_token` = 'bLPLwyfZlm3TWDTZYyM', `last_request_at` = '2011-05-02 11:08:42' WHERE `id` = 1[0m
+  [4;36;1mSQL (45.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mComment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (16.9ms)
+  [4;36;1mComment Load (13.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 131ms (View: 60, DB: 63) | 200 OK [http://localhost/blogs/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:42:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 11:12:24', `perishable_token` = 'm8FD9YGoAbdNt341G9av', `last_request_at` = '2011-05-02 11:12:24' WHERE `id` = 1[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mComment Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (8.8ms)
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 171ms (View: 113, DB: 51) | 200 OK [http://localhost/blogs/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#inc_rating (for 127.0.0.1 at 2011-05-02 16:42:38) [POST]
+  Parameters: {"x"=>"30", "y"=>"11", "action"=>"inc_rating", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"blogs"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 11:12:38', `perishable_token` = 'WduPLhlty5lkLXNQOmR', `last_request_at` = '2011-05-02 11:12:38' WHERE `id` = 1[0m
+  [4;35;1mSQL (51.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlog Load (16.8ms)[0m   [0mSELECT `blogs`.id FROM `blogs` WHERE (`blogs`.`title` = BINARY 'Lokpal panel to meet today after acrimonious break' AND `blogs`.id <> 2) LIMIT 1[0m
+  [4;36;1mBlog Update (0.2ms)[0m   [0;1mUPDATE `blogs` SET `updated_at` = '2011-05-02 11:12:38', `rating` = 1 WHERE `id` = 2[0m
+  [4;35;1mSQL (34.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/blogs/2
+Completed in 142ms (DB: 105) | 302 Found [http://localhost/blogs/inc_rating]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:42:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 11:12:38', `perishable_token` = 'pnwTpljB0fkNIZxUAfj', `last_request_at` = '2011-05-02 11:12:38' WHERE `id` = 1[0m
+  [4;35;1mSQL (52.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.9ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 105ms (View: 42, DB: 56) | 200 OK [http://localhost/blogs/2]
+  [4;35;1mBlog Load (51.2ms)[0m   [0mSELECT * FROM `blogs` LIMIT 1[0m
+  [4;36;1mSQL (30.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mBlog Load (10.6ms)[0m   [0mSELECT * FROM `blogs` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:45:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 11:15:06', `perishable_token` = '6PGGeBVlGiLm55yJIHW', `last_request_at` = '2011-05-02 11:15:06' WHERE `id` = 1[0m
+  [4;35;1mSQL (48.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.7ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 111ms (View: 51, DB: 52) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:46:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 11:16:27', `perishable_token` = 'C4lf9WdIaWs5XNaWtQiy', `last_request_at` = '2011-05-02 11:16:27' WHERE `id` = 1[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.9ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 172ms (View: 117, DB: 47) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:51:25) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 11:21:25', `perishable_token` = 'KyvWLjEg6ge9v427g83f', `last_request_at` = '2011-05-02 11:21:25' WHERE `id` = 1[0m
+  [4;35;1mSQL (53.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (8.1ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 110ms (View: 45, DB: 57) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:53:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 11:23:49', `perishable_token` = 'qHvl1g1Vc5nvevFJkBGD', `last_request_at` = '2011-05-02 11:23:49' WHERE `id` = 1[0m
+  [4;35;1mSQL (47.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (10.4ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 107ms (View: 47, DB: 51) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:53:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 11:23:50', `perishable_token` = '3gKX0k8szBfvH2SlEahi', `last_request_at` = '2011-05-02 11:23:50' WHERE `id` = 1[0m
+  [4;35;1mSQL (45.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.2ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 100ms (View: 44, DB: 49) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 16:53:52) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (1.7ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 11:23:52', `perishable_token` = '6rp49UORFxb7wqSIguH', `last_request_at` = '2011-05-02 11:23:52' WHERE `id` = 1[0m
+  [4;35;1mSQL (33.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (10.0ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 100ms (View: 51, DB: 40) | 200 OK [http://localhost/blogs/2]
