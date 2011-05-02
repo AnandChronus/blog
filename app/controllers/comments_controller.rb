@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
+  before_filter :not_viewable, :except => :create
+
   # GET /comments
   # GET /comments.xml
+
   def index
     @comments = Comment.all
 
@@ -9,6 +12,7 @@ class CommentsController < ApplicationController
       format.xml  { render :xml => @comments }
     end
   end
+  
 
   # GET /comments/1
   # GET /comments/1.xml

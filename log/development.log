@@ -8416,3 +8416,2974 @@ Processing BlogsController#index (for 127.0.0.1 at 2011-04-29 17:29:12) [GET]
 Rendering template within layouts/application
 Rendering blogs/index
 Completed in 111ms (View: 99, DB: 2) | 200 OK [http://localhost/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:05:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (39.5ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+Completed in 184ms (View: 108, DB: 39) | 200 OK [http://localhost/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:05:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (1.3ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2011-05-02 11:05:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"blogs"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/blogs/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 11:05:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 55ms (View: 36, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 11:05:46) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'anandm') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "login_count" = 7, "updated_at" = '2011-05-02 05:35:46', "perishable_token" = 'uudTNRlhPWV7Uf0nb1', "last_request_at" = '2011-05-02 05:35:46', "last_login_at" = '2011-04-29 11:58:53', "current_login_at" = '2011-05-02 05:35:46' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/blogs
+Completed in 309ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:05:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (1.3ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 05:35:46', "perishable_token" = 'lvL062K7ltSvI1vPw', "last_request_at" = '2011-05-02 05:35:46' WHERE "id" = 3[0m
+Completed in 134ms (View: 123, DB: 2) | 200 OK [http://localhost/blogs]
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 11:05:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"12", "controller"=>"blogs"}
+  [4;35;1mBlog Load (0.3ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs"."id" = 12) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 05:35:50', "perishable_token" = 'hPf2Xf7V8wI4CMHtBzs', "last_request_at" = '2011-05-02 05:35:50' WHERE "id" = 3[0m
+Rendered blogs/_comment_form (43.7ms)
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".blog_id = 12) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Completed in 200ms (View: 187, DB: 3) | 200 OK [http://localhost/blogs/12]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:06:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (1.6ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 05:36:00', "perishable_token" = 'JTQrTPStbEK65JJwRiN', "last_request_at" = '2011-05-02 05:36:00' WHERE "id" = 3[0m
+Completed in 129ms (View: 119, DB: 2) | 200 OK [http://localhost/blogs]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-05-02 11:06:04) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 05:36:04', "perishable_token" = 'wOJ1IZgDCmw4YMpUOaIk', "last_request_at" = '2011-05-02 05:36:04' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 105ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 11:06:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 23ms (View: 8, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:06:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (1.3ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/blogs]
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 11:06:08) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+Rendered blogs/_comment_form (8.0ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".blog_id = 5) ORDER BY created_at DESC[0m
+Completed in 41ms (View: 31, DB: 1) | 200 OK [http://localhost/blogs/5]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2011-05-02 11:06:13) [POST]
+  Parameters: {"comment"=>{"content"=>"khjgkjg"}, "commit"=>"Comment", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"comments"}
+Redirected to http://localhost:3000/user_session/new
+Completed in 20ms (DB: 0) | 302 Found [http://localhost/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 11:06:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 91ms (View: 9, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:06:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (1.3ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+Completed in 31ms (View: 22, DB: 1) | 200 OK [http://localhost/blogs]
+
+
+Processing BlogsController#index (for 192.168.1.56 at 2011-05-02 11:06:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (1.3ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://192.168.1.56/]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-05-02 11:08:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, require_user, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:08:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+  [4;36;1mComment Load (2.0ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 90ms (View: 81, DB: 2) | 200 OK [http://localhost/comments]
+
+
+Processing BlogsController#index (for 192.168.1.56 at 2011-05-02 11:12:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (1.3ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://192.168.1.56/]
+
+
+Processing BlogsController#show (for 192.168.1.56 at 2011-05-02 11:12:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+Rendered blogs/_comment_form (7.8ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".blog_id = 5) ORDER BY created_at DESC[0m
+Completed in 41ms (View: 30, DB: 1) | 200 OK [http://192.168.1.56/blogs/5]
+
+
+Processing CommentsController#create (for 192.168.1.56 at 2011-05-02 11:12:33) [POST]
+  Parameters: {"comment"=>{"content"=>"hgfjhj"}, "commit"=>"Comment", "action"=>"create", "authenticity_token"=>"eKkW1Drj3B4aLkI8XUe4zERav+Yv+Q3u3iiiMsFJnB8=", "controller"=>"comments"}
+Redirected to http://192.168.1.56:3000/user_session/new
+Completed in 20ms (DB: 0) | 302 Found [http://192.168.1.56/comments]
+
+
+Processing UserSessionsController#new (for 192.168.1.56 at 2011-05-02 11:12:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 93ms (View: 9, DB: 0) | 200 OK [http://192.168.1.56/user_session/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:12:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (1.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+Completed in 31ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 11:12:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 23ms (View: 8, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 11:12:54) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'anandm') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "login_count" = 8, "updated_at" = '2011-05-02 05:42:54', "perishable_token" = '2CWCFZDi66jXjuIxyQJQ', "last_request_at" = '2011-05-02 05:42:54', "last_login_at" = '2011-05-02 05:35:46', "current_login_at" = '2011-05-02 05:42:54' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/blogs
+Completed in 126ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:12:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (2.9ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-02 05:42:54', "perishable_token" = 'ot1CrfrxFbwsSNbff3Zd', "last_request_at" = '2011-05-02 05:42:54' WHERE "id" = 3[0m
+Completed in 147ms (View: 133, DB: 4) | 200 OK [http://localhost/blogs]
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 11:12:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 05:42:56', "perishable_token" = 'ikA0Nf4Wtrpu8Cbkp0', "last_request_at" = '2011-05-02 05:42:56' WHERE "id" = 3[0m
+Rendered blogs/_comment_form (13.2ms)
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".blog_id = 7) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Completed in 194ms (View: 184, DB: 2) | 200 OK [http://localhost/blogs/7]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2011-05-02 11:13:00) [POST]
+  Parameters: {"comment"=>{"content"=>"kgjhkg"}, "commit"=>"Comment", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"comments"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-02 05:43:00', "perishable_token" = 'gclAZpu8Y19e2rCTTJBv', "last_request_at" = '2011-05-02 05:43:00' WHERE "id" = 3[0m
+  [4;36;1mComment Create (0.5ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "blog_id", "user_id", "content") VALUES('2011-05-02 05:43:00', '2011-05-02 05:43:00', 7, 3, 'kgjhkg')[0m
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs"."id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/blogs/7
+Completed in 202ms (DB: 2) | 302 Found [http://localhost/comments]
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 11:13:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 05:43:00', "perishable_token" = 'SB4k3PYIWCuyDAisQNj', "last_request_at" = '2011-05-02 05:43:00' WHERE "id" = 3[0m
+Rendered blogs/_comment_form (9.5ms)
+  [4;35;1mComment Load (0.9ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".blog_id = 7) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Completed in 147ms (View: 136, DB: 3) | 200 OK [http://localhost/blogs/7]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:13:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `false' for #<CommentsController:0xb69bb048>):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (14.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:15:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `false' for #<CommentsController:0xb67d4e28>):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:15:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `false' for #<CommentsController:0xb6ac9cdc>):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:15:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `false' for #<CommentsController:0xb68b1828>):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:15:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `false' for #<CommentsController:0xb675b514>):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (107.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:15:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (1.5ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-02 05:45:24', "perishable_token" = 'P1Vekbl86Y2OcJwZ515', "last_request_at" = '2011-05-02 05:45:24' WHERE "id" = 3[0m
+Completed in 104ms (View: 94, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:15:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `false' for #<CommentsController:0xb683b3d0>):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:16:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+  [4;36;1mComment Load (2.2ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 66ms (View: 56, DB: 2) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:16:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+  [4;35;1mComment Load (2.0ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 62ms (View: 53, DB: 2) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:16:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+  [4;36;1mComment Load (2.0ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 61ms (View: 53, DB: 2) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:16:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+  [4;35;1mComment Load (2.0ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 62ms (View: 53, DB: 2) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:31:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `index' for CommentsController:Class):
+  app/controllers/comments_controller.rb:5
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:32:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `gg' for CommentsController:Class):
+  app/controllers/comments_controller.rb:5
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:32:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `gg' for CommentsController:Class):
+  app/controllers/comments_controller.rb:5
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.0ms)
+Rendered rescues/_request_and_response (78.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:32:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `gg' for CommentsController:Class):
+  app/controllers/comments_controller.rb:5
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:33:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `gg' for CommentsController:Class):
+  app/controllers/comments_controller.rb:14
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:33:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `gg' for CommentsController:Class):
+  app/controllers/comments_controller.rb:14
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.9ms)
+Rendered rescues/_request_and_response (19.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:33:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `index' for CommentsController:Class):
+  app/controllers/comments_controller.rb:14
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:33:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `index' for CommentsController:Class):
+  app/controllers/comments_controller.rb:14
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:33:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `index' for CommentsController:Class):
+  app/controllers/comments_controller.rb:14
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (102.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:33:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `index' for CommentsController:Class):
+  app/controllers/comments_controller.rb:14
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 11:33:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `index' for CommentsController:Class):
+  app/controllers/comments_controller.rb:14
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:41:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `f' for #<CommentsController:0xb673e9a0>):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (113.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:41:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `f' for #<CommentsController:0xb69d4cf0>):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:41:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:41:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (114.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:41:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (121.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `blog_id' for nil:NilClass):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `blog_id' for nil:NilClass):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:42:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `blog_id' for nil:NilClass):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:44:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `root_url' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (108.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:44:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `redirect_to' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:44:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `redirect_to' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:44:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `redirect_to' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (118.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:45:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blogs_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:45:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blogs_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:45:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blog_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:45:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blog_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:45:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blog_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:46:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `root_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:46:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `root_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:47:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blogs_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:47:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blogs_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:47:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blogs_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:47:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blogs_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:47:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `blogs_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:48:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+ThreadError (return can't jump across threads):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:48:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+ThreadError (return can't jump across threads):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:48:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+ThreadError (return can't jump across threads):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:48:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+ThreadError (return can't jump across threads):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:48:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+ThreadError (return can't jump across threads):
+  app/controllers/comments_controller.rb:2
+  app/controllers/comments_controller.rb:8:in `call'
+  app/controllers/comments_controller.rb:8:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:53:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+Redirected to http://localhost:3000/
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/comments]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:53:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (1.3ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 06:23:01', "perishable_token" = 'wSBhQVekWXt0fwURTUvU', "last_request_at" = '2011-05-02 06:23:01' WHERE "id" = 3[0m
+Completed in 146ms (View: 136, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:53:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+Redirected to http://localhost:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/comments]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:53:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (1.5ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-02 06:23:06', "perishable_token" = 'eod9Eb4ub1FRlOjtp0tD', "last_request_at" = '2011-05-02 06:23:06' WHERE "id" = 3[0m
+Completed in 126ms (View: 116, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:53:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `x' for #<CommentsController:0xb68c9130>):
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:53:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `x' for #<CommentsController:0xb6757194>):
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (101.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:53:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:53:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:53:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:54:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:54:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:54:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:55:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `root_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:4
+  app/controllers/comments_controller.rb:13:in `call'
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:55:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `root_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:4
+  app/controllers/comments_controller.rb:13:in `call'
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:55:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NameError (undefined local variable or method `root_path' for CommentsController:Class):
+  app/controllers/comments_controller.rb:4
+  app/controllers/comments_controller.rb:13:in `call'
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:55:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `redirect_to' for CommentsController:Class):
+  app/controllers/comments_controller.rb:4
+  app/controllers/comments_controller.rb:13:in `call'
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:55:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `redirect_to' for CommentsController:Class):
+  app/controllers/comments_controller.rb:4
+  app/controllers/comments_controller.rb:13:in `call'
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (108.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:55:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `redirect_to' for CommentsController:Class):
+  app/controllers/comments_controller.rb:4
+  app/controllers/comments_controller.rb:13:in `call'
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:56:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `redirect_to' for CommentsController:Class):
+  app/controllers/comments_controller.rb:4
+  app/controllers/comments_controller.rb:13:in `call'
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 11:56:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+
+NoMethodError (undefined method `redirect_to' for CommentsController:Class):
+  app/controllers/comments_controller.rb:4
+  app/controllers/comments_controller.rb:13:in `call'
+  app/controllers/comments_controller.rb:13:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 11:59:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (1.3ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 06:29:58', "perishable_token" = 'ZPEDhv5RKZWvlKBDxqYi', "last_request_at" = '2011-05-02 06:29:58' WHERE "id" = 3[0m
+Completed in 124ms (View: 114, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 12:00:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+  [4;35;1mComment Load (2.1ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 62ms (View: 53, DB: 2) | 200 OK [http://localhost/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (192.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (231.5ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBlogs (20110428081549)
+  [4;36;1mSQL (112.3ms)[0m   [0;1mCREATE TABLE `blogs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `content` text, `user_id` int(11), `rating` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (41.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110428081549')[0m
+Migrating to CreateComments (20110428081658)
+  [4;36;1mSQL (122.1ms)[0m   [0;1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `blog_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (41.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110428081658')[0m
+Migrating to CreateUsers (20110428082626)
+  [4;36;1mSQL (121.7ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `crypted_password` varchar(255) NOT NULL, `password_salt` varchar(255) NOT NULL, `persistence_token` varchar(255) NOT NULL, `single_access_token` varchar(255) NOT NULL, `perishable_token` varchar(255) NOT NULL, `login_count` int(11) DEFAULT 0 NOT NULL, `failed_login_count` int(11) DEFAULT 0 NOT NULL, `last_request_at` datetime, `current_login_at` datetime, `last_login_at` datetime, `current_login_ip` varchar(255), `last_login_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (41.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110428082626')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `blogs`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `blogs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `users`[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:26:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (1.5ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 06:56:28', "perishable_token" = 'xV0J7QlFZUU5s7vjbhD6', "last_request_at" = '2011-05-02 06:56:28' WHERE "id" = 3[0m
+Completed in 125ms (View: 115, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:26:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (29.8ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 132ms (View: 84, DB: 31) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:27:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (13.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Completed in 39ms (View: 18, DB: 14) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:27:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Completed in 28ms (View: 14, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 12:27:15) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'anandm') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Completed in 193ms (View: 72, DB: 16) | 200 OK [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-05-02 12:27:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.0ms)
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Completed in 61ms (View: 48, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-05-02 12:27:45) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"anandm", "email"=>"anand@anand.com"}}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (15.9ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'anand@anand.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'anandm') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'c23b9a857d9682bb709578e34989e2d501c399f0cd38ac62fe74f017f9e8b7d1895825ef9e2f7a31125da8a0947a7630650b24f93063354213e29a5ff9813199') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'cnktyFvMjHtdBKnCEKR') LIMIT 1[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.3ms)
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Completed in 65ms (View: 19, DB: 24) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-05-02 12:27:55) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"anandm", "email"=>"anand@anand.com"}}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'anand@anand.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'anandm') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'b9a9aa952b98d850ebea8c5edef0910c8011cf94b215ce468569fb725a3583296818f27b10577fd510330f5684f5c419fd1097667d6724bcaae545bf499353ad') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'y51PkZi2fcoeoi4ZCcK') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.5ms)
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Completed in 40ms (View: 18, DB: 2) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-05-02 12:28:08) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"anandm", "email"=>"anand@anand.com"}}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'anand@anand.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'anandm') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '49c0209646811c595b5433ded4c5cdeacca9179e7af59d1224a52809130335c3f380e9fbfb1df5cb1ed4763ae477c06277eafea938c0c0c04be0d8f9cd1239e4') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY '3vzrjtenK9cSMpQrz9l') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('3vzrjtenK9cSMpQrz9l', '2011-05-02 06:58:08', '2011-05-02 06:58:08', 'fa755294353efe00e75feca8aaea5c7ecc0666593cfd9663e99331cf408e8c6f097b6f5ba4939e47e826c666d85532ec6409128f084a9a0f34fbd59b636506bd', '3VH8RUpJFwziG5MDBBjf', '2011-05-02 06:58:08', 0, '127.0.0.1', 'zhdrBmysjyH8gKrSkWjA', '2011-05-02 06:58:08', '49c0209646811c595b5433ded4c5cdeacca9179e7af59d1224a52809130335c3f380e9fbfb1df5cb1ed4763ae477c06277eafea938c0c0c04be0d8f9cd1239e4', 1, NULL, 'anandm', NULL, 'anand@anand.com')[0m
+  [4;35;1mSQL (45.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/blogs
+Completed in 78ms (DB: 47) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:28:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (2.7ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '49c0209646811c595b5433ded4c5cdeacca9179e7af59d1224a52809130335c3f380e9fbfb1df5cb1ed4763ae477c06277eafea938c0c0c04be0d8f9cd1239e4') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 06:58:08', `perishable_token` = 'MgrXPhWMipPHxbbUmAkq', `last_request_at` = '2011-05-02 06:58:08' WHERE `id` = 1[0m
+  [4;35;1mSQL (61.0ms)[0m   [0mCOMMIT[0m
+Completed in 164ms (View: 27, DB: 65) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-05-02 12:28:11) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '49c0209646811c595b5433ded4c5cdeacca9179e7af59d1224a52809130335c3f380e9fbfb1df5cb1ed4763ae477c06277eafea938c0c0c04be0d8f9cd1239e4') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 06:58:11', `perishable_token` = 'sP7EGqRSUzjHIGntopj', `last_request_at` = '2011-05-02 06:58:11' WHERE `id` = 1[0m
+  [4;36;1mSQL (39.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 63ms (DB: 41) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:28:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 22ms (View: 8, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 12:28:19) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'anandm') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 06:58:19', `perishable_token` = 'Nm779gcccdML8T5Eaum', `last_login_at` = '2011-05-02 06:58:08', `last_login_ip` = '127.0.0.1', `current_login_at` = '2011-05-02 06:58:19', `login_count` = 2, `last_request_at` = '2011-05-02 06:58:19' WHERE `id` = 1[0m
+  [4;36;1mSQL (42.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/blogs
+Completed in 69ms (DB: 44) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:28:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 06:58:19', `perishable_token` = 'wq6TnN17DRPH3LkeAcWP', `last_request_at` = '2011-05-02 06:58:19' WHERE `id` = 1[0m
+  [4;36;1mSQL (38.1ms)[0m   [0;1mCOMMIT[0m
+Completed in 73ms (View: 26, DB: 40) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2011-05-02 12:28:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"blogs"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 06:58:22', `perishable_token` = 'l44UZKhSLvaHEq5XH0A0', `last_request_at` = '2011-05-02 06:58:22' WHERE `id` = 1[0m
+  [4;35;1mSQL (43.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+Rendering template within layouts/application
+Rendering blogs/new
+Rendered blogs/_form (76.2ms)
+Completed in 171ms (View: 101, DB: 45) | 200 OK [http://localhost/blogs/new]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2011-05-02 12:30:07) [POST]
+  Parameters: {"commit"=>"Save changes", "blog"=>{"title"=>"Americans take to the streets amid news of bin Laden's death", "content"=>"(CNN) -- Americans broke into celebration early Monday in a show of patriotism against the man who committed his life to attacking U.S. citizens, while those directly affected by Osama bin Laden's terrorist plots quietly reflected on the closure finally gained from his death.\r\n\r\nJust before President Barack Obama announced to the world late Sunday that bin Laden was dead, a crowd began to form outside the White House gates.\r\n\r\nA chant of \"U.S.A.! U.S.A.!\" filled the night air, and the quickly growing group spontaneously broke into an off-key rendition of \"The Star-Spangled Banner.\"\r\n\r\n\"I was in D.C. during 9/11,\" said Mason Wright, 33, who recalled his days as a student at American University watching a second plane hit the World Trade Center in 2001. \"It's hard to believe 10 years later, it's over.\"\r\n\r\n\"It's terrible to sit here and celebrate someone's death, but to the thousands of lives that were lost -- it's finally come to an end,\" he added.\r\n\r\nAlan Comar, 29, worked as a contractor in Afghanistan. He clutched his girlfriend as he watched hundreds clad in red, white and blue gather in front of the White House.\r\nBig crowds cheer at White House\r\nCrowds celebrate bin Laden death\r\nRELATED TOPICS\r\n\r\n    * Osama bin Laden\r\n    * Al Qaeda\r\n    * United States\r\n    * Terrorism\r\n\r\n\"There's very few of those got-to-be-there moments,\" the Washington resident said. \"This is one of them.\"\r\n\r\nDustin Swensson, who recently served in Iraq, echoed those comments, calling the news \"historic.\"\r\n\r\n\"It's what the world needed,\" he said as he celebrated outside the White House gates. \"(I'll) always remember where I was when the towers went down and I'm always going to remember where I am now.\"\r\n\r\nIn New York, a cheering crowd gathered at Ground Zero -- the site where the twin towers once stood. Strains of \"God Bless America\" could be heard intermittently trickling through the crowd.\r\n\r\nOne former New York firefighter -- forced to retire due to lung ailments suffered as a result of the dust from Ground Zero -- said he was there to let the 343 firefighters who died in the attacks know \"they didn't die in vain.\"\r\n\r\n\"It's a war that I feel we just won,\" he said. \"I'm down here to let them know that justice has been served.\"\r\n\r\nBob Gibson, a retired New York police officer, said the news of bin Laden's death gave him a sense of \"closure.\"\r\n\r\n\"I never thought this night would come that we would capture or kill bin Laden,\" he said. \"And thank the Lord he has been eliminated.\"\r\n\r\nPrivate moments of reflection were happening, too, as loved ones of those killed in the September, 11, 2001, attacks quietly marked bin Laden's death.\r\n\r\nPatricia Sliwak-Grinberg's brother, Robert Sliwak, a Cantor-Fitzgerald employee who died in the World Trade Center, said she began to cry when Obama began to describe the day of the attacks.\r\n\r\n\"I guess I'm happy,\" she said. \"You want to be happy but it's such a sad reason to be happy. ... You think of all those families and all those people who were sucked into this, when one person could be doing so much evil.\"\r\n\r\nShe likened the feeling to \"what people feel like when someone has been killed and they finally capture or kill the person who did it.\"\r\n\r\n\"It's so odd because everyone puts you in this whole collective group, but you're still just one person who lost a brother,\" she said.\r\n\r\nCarie Lemack, whose mother, Judy, was killed on American Airlines Flight 11 on September 11, expressed \"relief.\"\r\n\r\nIn an email to CNN, she said: \"Cannot express how this feels to my family, but relief is one word. We hope we can now focus on all that that madman took, namely nearly 3,000 + innocent victims, and not on him.\"\r\n\r\nGordon Felt, president of the Families of Flight 93, which crashed in a field in Shanksville, Pennsylvania, on 9/11, said that while the news could not \"ease our pain, or bring back our loved ones, it does bring a measure of comfort that the mastermind of the September 11th tragedy and the face of global terror can no longer spread his evil.\"\r\n\r\nElsewhere, spontaneous celebrations broke out on college campuses from Vermont to Delaware.\r\n\r\nCNN iReporter Chris Lemke, a media studies student at Penn State, said he has two finals later Monday, but chose to forgo studying to participate in the jubilation.\r\n\r\n\"It's just crazy,\" he said, adding that people began to gather on campus around 11 p.m. Sunday as word spread among late-night studiers by cell phone. Crowds listened to Obama's address from a TV blasting out an apartment window.\r\n\r\nSteve Rossero, a sophomore at Penn State, said he looked over his balcony and saw masses of students chanting and screaming following Obama's speech.\r\n\r\n\"It sparked patriotism in everyone, I think,\" he said.\r\n\r\nRossero, whose brother is in the military, said the news particularly hit home for him, but he said the feeling was shared by everyone celebrating.\r\n\r\n\"Just being American tonight, it's a great feeling.\""}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"blogs"}
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (9.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:00:07', `perishable_token` = 'dRUAGsZv4MWLk6wQfnIx', `last_request_at` = '2011-05-02 07:00:07' WHERE `id` = 1[0m
+  [4;35;1mSQL (44.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT `blogs`.id FROM `blogs` WHERE (`blogs`.`title` = BINARY 'Americans take to the streets amid news of bin Laden\'s death') LIMIT 1[0m
+  [4;35;1mBlog Create (0.5ms)[0m   [0mINSERT INTO `blogs` (`rating`, `created_at`, `title`, `updated_at`, `user_id`, `content`) VALUES(0, '2011-05-02 07:00:07', 'Americans take to the streets amid news of bin Laden\'s death', '2011-05-02 07:00:07', 1, '(CNN) -- Americans broke into celebration early Monday in a show of patriotism against the man who committed his life to attacking U.S. citizens, while those directly affected by Osama bin Laden\'s terrorist plots quietly reflected on the closure finally gained from his death.\r\n\r\nJust before President Barack Obama announced to the world late Sunday that bin Laden was dead, a crowd began to form outside the White House gates.\r\n\r\nA chant of \"U.S.A.! U.S.A.!\" filled the night air, and the quickly growing group spontaneously broke into an off-key rendition of \"The Star-Spangled Banner.\"\r\n\r\n\"I was in D.C. during 9/11,\" said Mason Wright, 33, who recalled his days as a student at American University watching a second plane hit the World Trade Center in 2001. \"It\'s hard to believe 10 years later, it\'s over.\"\r\n\r\n\"It\'s terrible to sit here and celebrate someone\'s death, but to the thousands of lives that were lost -- it\'s finally come to an end,\" he added.\r\n\r\nAlan Comar, 29, worked as a contractor in Afghanistan. He clutched his girlfriend as he watched hundreds clad in red, white and blue gather in front of the White House.\r\nBig crowds cheer at White House\r\nCrowds celebrate bin Laden death\r\nRELATED TOPICS\r\n\r\n * Osama bin Laden\r\n * Al Qaeda\r\n * United States\r\n * Terrorism\r\n\r\n\"There\'s very few of those got-to-be-there moments,\" the Washington resident said. \"This is one of them.\"\r\n\r\nDustin Swensson, who recently served in Iraq, echoed those comments, calling the news \"historic.\"\r\n\r\n\"It\'s what the world needed,\" he said as he celebrated outside the White House gates. \"(I\'ll) always remember where I was when the towers went down and I\'m always going to remember where I am now.\"\r\n\r\nIn New York, a cheering crowd gathered at Ground Zero -- the site where the twin towers once stood. Strains of \"God Bless America\" could be heard intermittently trickling through the crowd.\r\n\r\nOne former New York firefighter -- forced to retire due to lung ailments suffered as a result of the dust from Ground Zero -- said he was there to let the 343 firefighters who died in the attacks know \"they didn\'t die in vain.\"\r\n\r\n\"It\'s a war that I feel we just won,\" he said. \"I\'m down here to let them know that justice has been served.\"\r\n\r\nBob Gibson, a retired New York police officer, said the news of bin Laden\'s death gave him a sense of \"closure.\"\r\n\r\n\"I never thought this night would come that we would capture or kill bin Laden,\" he said. \"And thank the Lord he has been eliminated.\"\r\n\r\nPrivate moments of reflection were happening, too, as loved ones of those killed in the September, 11, 2001, attacks quietly marked bin Laden\'s death.\r\n\r\nPatricia Sliwak-Grinberg\'s brother, Robert Sliwak, a Cantor-Fitzgerald employee who died in the World Trade Center, said she began to cry when Obama began to describe the day of the attacks.\r\n\r\n\"I guess I\'m happy,\" she said. \"You want to be happy but it\'s such a sad reason to be happy. ... You think of all those families and all those people who were sucked into this, when one person could be doing so much evil.\"\r\n\r\nShe likened the feeling to \"what people feel like when someone has been killed and they finally capture or kill the person who did it.\"\r\n\r\n\"It\'s so odd because everyone puts you in this whole collective group, but you\'re still just one person who lost a brother,\" she said.\r\n\r\nCarie Lemack, whose mother, Judy, was killed on American Airlines Flight 11 on September 11, expressed \"relief.\"\r\n\r\nIn an email to CNN, she said: \"Cannot express how this feels to my family, but relief is one word. We hope we can now focus on all that that madman took, namely nearly 3,000 + innocent victims, and not on him.\"\r\n\r\nGordon Felt, president of the Families of Flight 93, which crashed in a field in Shanksville, Pennsylvania, on 9/11, said that while the news could not \"ease our pain, or bring back our loved ones, it does bring a measure of comfort that the mastermind of the September 11th tragedy and the face of global terror can no longer spread his evil.\"\r\n\r\nElsewhere, spontaneous celebrations broke out on college campuses from Vermont to Delaware.\r\n\r\nCNN iReporter Chris Lemke, a media studies student at Penn State, said he has two finals later Monday, but chose to forgo studying to participate in the jubilation.\r\n\r\n\"It\'s just crazy,\" he said, adding that people began to gather on campus around 11 p.m. Sunday as word spread among late-night studiers by cell phone. Crowds listened to Obama\'s address from a TV blasting out an apartment window.\r\n\r\nSteve Rossero, a sophomore at Penn State, said he looked over his balcony and saw masses of students chanting and screaming following Obama\'s speech.\r\n\r\n\"It sparked patriotism in everyone, I think,\" he said.\r\n\r\nRossero, whose brother is in the military, said the news particularly hit home for him, but he said the feeling was shared by everyone celebrating.\r\n\r\n\"Just being American tonight, it\'s a great feeling.\"')[0m
+  [4;36;1mSQL (35.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/blogs/1
+Completed in 130ms (DB: 94) | 302 Found [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:30:07) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (21.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:00:07', `perishable_token` = '0yX4KLCGPO59c8wKK34', `last_request_at` = '2011-05-02 07:00:07' WHERE `id` = 1[0m
+  [4;36;1mSQL (52.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mComment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (10.8ms)
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.blog_id = 1) ORDER BY created_at DESC[0m
+Completed in 141ms (View: 57, DB: 77) | 200 OK [http://localhost/blogs/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2011-05-02 12:30:17) [POST]
+  Parameters: {"comment"=>{"content"=>"nice one.."}, "commit"=>"Comment", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"comments"}
+  [4;35;1mComment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:00:17', `perishable_token` = 'mhjQMxud6JVTqmxiJLGM', `last_request_at` = '2011-05-02 07:00:17' WHERE `id` = 1[0m
+  [4;36;1mSQL (35.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO `comments` (`created_at`, `updated_at`, `blog_id`, `user_id`, `content`) VALUES('2011-05-02 07:00:17', '2011-05-02 07:00:17', 1, 1, 'nice one..')[0m
+  [4;35;1mSQL (46.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/blogs/1
+Completed in 131ms (DB: 86) | 302 Found [http://localhost/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:30:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:00:17', `perishable_token` = '3lniJr5hMSQzLCCmoqL', `last_request_at` = '2011-05-02 07:00:17' WHERE `id` = 1[0m
+  [4;35;1mSQL (50.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.9ms)
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 1) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 111ms (View: 47, DB: 55) | 200 OK [http://localhost/blogs/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-05-02 12:30:24) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:00:24', `perishable_token` = 'tBsZDten7Il5v07DkKli', `last_request_at` = '2011-05-02 07:00:24' WHERE `id` = 1[0m
+  [4;35;1mSQL (33.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 59ms (DB: 36) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:30:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 25ms (View: 9, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-05-02 12:30:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.6ms)
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-05-02 12:31:50) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"temp", "email"=>"temp@temp.com"}}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'temp@temp.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'temp') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'KLP89bFjBsBkxCPvdMBB') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('KLP89bFjBsBkxCPvdMBB', '2011-05-02 07:01:50', '2011-05-02 07:01:50', 'daf222a3c7c9e0baae7752783f99f73bded3c38019ee09c1d8cd2b06d022abab5025f85ce6e12a10d237cbf569e518559fe48011998cac9d19d040853a775e99', 'vhvbHUz8sB0xFQGBwjG', '2011-05-02 07:01:50', 0, '127.0.0.1', 'hp7YmGvg0MMHVltb8Ee', '2011-05-02 07:01:50', '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b', 1, NULL, 'temp', NULL, 'temp@temp.com')[0m
+  [4;35;1mSQL (40.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/blogs
+Completed in 72ms (DB: 43) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:31:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mBlog Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:01:50', `perishable_token` = 'khfezLTZiliEGHV6YMs', `last_request_at` = '2011-05-02 07:01:50' WHERE `id` = 2[0m
+  [4;36;1mSQL (43.5ms)[0m   [0;1mCOMMIT[0m
+Completed in 82ms (View: 27, DB: 46) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:31:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:01:53', `perishable_token` = 'tjsK04z9WgjN6KbX71p', `last_request_at` = '2011-05-02 07:01:53' WHERE `id` = 2[0m
+  [4;36;1mSQL (33.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mComment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.7ms)
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.blog_id = 1) ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 153ms (View: 109, DB: 37) | 200 OK [http://localhost/blogs/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2011-05-02 12:32:05) [POST]
+  Parameters: {"comment"=>{"content"=>"when??????????"}, "commit"=>"Comment", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"comments"}
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:02:05', `perishable_token` = '8n4auqpDhDU8xONyeDE7', `last_request_at` = '2011-05-02 07:02:05' WHERE `id` = 2[0m
+  [4;35;1mSQL (38.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO `comments` (`created_at`, `updated_at`, `blog_id`, `user_id`, `content`) VALUES('2011-05-02 07:02:05', '2011-05-02 07:02:05', 1, 2, 'when??????????')[0m
+  [4;36;1mSQL (39.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mBlog Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/blogs/1
+Completed in 118ms (DB: 82) | 302 Found [http://localhost/comments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:32:05) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:02:06', `perishable_token` = '13ryMG3J4BuTAjh5HIN', `last_request_at` = '2011-05-02 07:02:06' WHERE `id` = 2[0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mComment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (8.5ms)
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.blog_id = 1) ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 90ms (View: 40, DB: 42) | 200 OK [http://localhost/blogs/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:32:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:02:11', `perishable_token` = 'n3jVVUsb52Y9xdPiKkaK', `last_request_at` = '2011-05-02 07:02:11' WHERE `id` = 2[0m
+  [4;35;1mSQL (35.6ms)[0m   [0mCOMMIT[0m
+Completed in 76ms (View: 30, DB: 38) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2011-05-02 12:32:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"blogs"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:02:15', `perishable_token` = '7tgQpyWHC6VfAJNBsj', `last_request_at` = '2011-05-02 07:02:15' WHERE `id` = 2[0m
+  [4;36;1mSQL (33.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+Rendering template within layouts/application
+Rendering blogs/new
+Rendered blogs/_form (3.9ms)
+Completed in 69ms (View: 8, DB: 36) | 200 OK [http://localhost/blogs/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2011-05-02 12:33:47) [POST]
+  Parameters: {"commit"=>"Save changes", "blog"=>{"title"=>"Lokpal panel to meet today after acrimonious break", "content"=>"NEW DELHI: After a fortnight-long break saw civil society members battle accusations of favouritism and lobbying, the joint drafting committee of government and Anna Hazare nominees will resume work on Monday to draw up the Lokpal Bill amid strong differences on its architecture.\r\n\r\nCivil society was hopeful that substantive discussions on the anti-graft ombudsman would start with the second meeting after the April 16 session was confined to thrashing out modalities.\r\n\r\nThe government nominees on the panel met chairman Pranab Mukherjee to finetune their strategy before the second meeting. The government has not circulated a formal agenda for Monday's meeting and it is felt that the discussions would gather pace only after the assembly results to five states on May 13.\r\n\r\nThe contentious issues of the ambit of Lokpal including prime minister and judiciary, its powers to try and order, have divided government and Hazare-led civil society. The civil society submitted its draft bill in the first meeting, staking out its expectations. The draft even gives powers of intercepting telephones and monitoring messages to the ombudsman. The demand for a separate prosecution wing with merger of CBI's anti-corruption wing is another radical demand on record.\r\n\r\nThe government, however, eked out elbow room for itself when Team Anna agreed that it could call for views from other sections of society.\r\n\r\nCorruption as a social concern is back in the headlines but with differing perceptions. While National Advisory Council headed by Congress chief Sonia Gandhi dropped Lokpal Bill from its agenda to avoid duplication with the joint committee, the Council last week argued that a basket of reforms in administration, judiciary and government were required to control corruption and named Lokpal as one of the many important steps.\r\n\r\nHazare's fast, which forced the government to concede its demand for Lokpal Bill and a joint committee, had the political class led by Congress smarting. The surfacing of a CD, with senior lawyer Shanti Bhushan purportedly telling SP chief Mulayam Singh Yadav to pay Rs 4 crore to his son Prashant to manage a PIL, triggered a major row. The Bhushans, who are on the drafting panel, contested the CD as doctored but the government-owned CFSL approved the disc as genuine, leading to calls for their recusal from the joint committee.\r\n\r\nThe Bhushans, led by Hazare, accused the government of dirty tricks to discredit civil society members. AICC general secretary Digvijay Singh's comments added to the controversy as Karnataka Lokayukta Santosh Hegde threatened to resign from the panel. The Congress core group led by the PM and Congress chief Sonia Gandhi restored order by issuing a statement that controversies would not affect the joint panel's work and it looked forward to working with Hazare's nominees.\r\n\r\nWith its share of controversies, the panel's biggest challenge is to reconcile the radical demands of civil society with the government push for a calibrated Lokpal Bill. "}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"blogs"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:03:47', `perishable_token` = 'vVGp3tyqd1rgvzorq2s', `last_request_at` = '2011-05-02 07:03:47' WHERE `id` = 2[0m
+  [4;36;1mSQL (48.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT `blogs`.id FROM `blogs` WHERE (`blogs`.`title` = BINARY 'Lokpal panel to meet today after acrimonious break') LIMIT 1[0m
+  [4;36;1mBlog Create (0.3ms)[0m   [0;1mINSERT INTO `blogs` (`rating`, `created_at`, `title`, `updated_at`, `user_id`, `content`) VALUES(0, '2011-05-02 07:03:47', 'Lokpal panel to meet today after acrimonious break', '2011-05-02 07:03:47', 2, 'NEW DELHI: After a fortnight-long break saw civil society members battle accusations of favouritism and lobbying, the joint drafting committee of government and Anna Hazare nominees will resume work on Monday to draw up the Lokpal Bill amid strong differences on its architecture.\r\n\r\nCivil society was hopeful that substantive discussions on the anti-graft ombudsman would start with the second meeting after the April 16 session was confined to thrashing out modalities.\r\n\r\nThe government nominees on the panel met chairman Pranab Mukherjee to finetune their strategy before the second meeting. The government has not circulated a formal agenda for Monday\'s meeting and it is felt that the discussions would gather pace only after the assembly results to five states on May 13.\r\n\r\nThe contentious issues of the ambit of Lokpal including prime minister and judiciary, its powers to try and order, have divided government and Hazare-led civil society. The civil society submitted its draft bill in the first meeting, staking out its expectations. The draft even gives powers of intercepting telephones and monitoring messages to the ombudsman. The demand for a separate prosecution wing with merger of CBI\'s anti-corruption wing is another radical demand on record.\r\n\r\nThe government, however, eked out elbow room for itself when Team Anna agreed that it could call for views from other sections of society.\r\n\r\nCorruption as a social concern is back in the headlines but with differing perceptions. While National Advisory Council headed by Congress chief Sonia Gandhi dropped Lokpal Bill from its agenda to avoid duplication with the joint committee, the Council last week argued that a basket of reforms in administration, judiciary and government were required to control corruption and named Lokpal as one of the many important steps.\r\n\r\nHazare\'s fast, which forced the government to concede its demand for Lokpal Bill and a joint committee, had the political class led by Congress smarting. The surfacing of a CD, with senior lawyer Shanti Bhushan purportedly telling SP chief Mulayam Singh Yadav to pay Rs 4 crore to his son Prashant to manage a PIL, triggered a major row. The Bhushans, who are on the drafting panel, contested the CD as doctored but the government-owned CFSL approved the disc as genuine, leading to calls for their recusal from the joint committee.\r\n\r\nThe Bhushans, led by Hazare, accused the government of dirty tricks to discredit civil society members. AICC general secretary Digvijay Singh\'s comments added to the controversy as Karnataka Lokayukta Santosh Hegde threatened to resign from the panel. The Congress core group led by the PM and Congress chief Sonia Gandhi restored order by issuing a statement that controversies would not affect the joint panel\'s work and it looked forward to working with Hazare\'s nominees.\r\n\r\nWith its share of controversies, the panel\'s biggest challenge is to reconcile the radical demands of civil society with the government push for a calibrated Lokpal Bill. ')[0m
+  [4;35;1mSQL (28.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/blogs/2
+Completed in 115ms (DB: 80) | 302 Found [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:33:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.3ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:03:48', `perishable_token` = 'XNG0oeTIXNhQF81qvlef', `last_request_at` = '2011-05-02 07:03:48' WHERE `id` = 2[0m
+  [4;35;1mSQL (41.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.1ms)
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+Completed in 95ms (View: 41, DB: 47) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-05-02 12:34:04) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '424ce17824ec8bb9ee071b31202a493f22a6fbb493edad54f23f1d024f530252d52333c96e22f33d8d6a65b29ce1da6acabf1d06d460ee37dc69ed5ca428bd8b') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:04:04', `perishable_token` = 'HAmV9OoTJ46ccCfsgMi', `last_request_at` = '2011-05-02 07:04:04' WHERE `id` = 2[0m
+  [4;36;1mSQL (33.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 66ms (DB: 35) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:34:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 28ms (View: 9, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 12:34:06) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'anandm') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `failed_login_count` = 1, `updated_at` = '2011-05-02 07:04:06', `perishable_token` = '2W23mAgHrP3bKR7qLKim' WHERE `id` = 1[0m
+  [4;36;1mSQL (30.4ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 65ms (View: 11, DB: 32) | 200 OK [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:34:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 25ms (View: 9, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 12:34:18) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'anandm') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `failed_login_count` = 0, `updated_at` = '2011-05-02 07:04:18', `perishable_token` = 'Qxa8ilFkExyDeETEsY74', `last_login_at` = '2011-05-02 06:58:19', `current_login_at` = '2011-05-02 07:04:18', `login_count` = 3, `last_request_at` = '2011-05-02 07:04:18' WHERE `id` = 1[0m
+  [4;36;1mSQL (37.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/blogs
+Completed in 64ms (DB: 39) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:34:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (0.9ms)[0m   [0mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:04:19', `perishable_token` = 'eUNqvxcsqXljCa4LGN8o', `last_request_at` = '2011-05-02 07:04:19' WHERE `id` = 1[0m
+  [4;35;1mSQL (31.5ms)[0m   [0mCOMMIT[0m
+Completed in 75ms (View: 30, DB: 36) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:34:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:04:21', `perishable_token` = 'dcWfJPI427xzCmkN2UP3', `last_request_at` = '2011-05-02 07:04:21' WHERE `id` = 1[0m
+  [4;35;1mSQL (35.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.9ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+Completed in 89ms (View: 42, DB: 39) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2011-05-02 12:34:47) [POST]
+  Parameters: {"comment"=>{"content"=>"finally.."}, "commit"=>"Comment", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"comments"}
+  [4;36;1mComment Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:04:48', `perishable_token` = 'LkQ1pMexPUI6vphTzi8C', `last_request_at` = '2011-05-02 07:04:48' WHERE `id` = 1[0m
+  [4;35;1mSQL (38.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO `comments` (`created_at`, `updated_at`, `blog_id`, `user_id`, `content`) VALUES('2011-05-02 07:04:48', '2011-05-02 07:04:48', 2, 1, 'finally..')[0m
+  [4;36;1mSQL (30.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mBlog Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) LIMIT 1[0m
+Redirected to http://localhost:3000/blogs/2
+Completed in 108ms (DB: 73) | 302 Found [http://localhost/comments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:34:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:04:48', `perishable_token` = 'A7GNBH12S6gSQXrDdGNc', `last_request_at` = '2011-05-02 07:04:48' WHERE `id` = 1[0m
+  [4;36;1mSQL (45.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mComment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (10.5ms)
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 102ms (View: 45, DB: 49) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-05-02 12:34:52) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:04:52', `perishable_token` = 'hokcpqq2gxuCA82INOf', `last_request_at` = '2011-05-02 07:04:52' WHERE `id` = 1[0m
+  [4;36;1mSQL (32.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 55ms (DB: 34) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:34:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 26ms (View: 8, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 12:40:52) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'anandm') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `failed_login_count` = 1, `updated_at` = '2011-05-02 07:10:52', `perishable_token` = 'W9pxRLC8Y0GWaQdOQbtm' WHERE `id` = 1[0m
+  [4;36;1mSQL (42.1ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 83ms (View: 12, DB: 44) | 200 OK [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 12:40:58) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'anandm') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `failed_login_count` = 0, `updated_at` = '2011-05-02 07:10:58', `perishable_token` = 'ueQXqFzeYurqKp8t94F2', `last_login_at` = '2011-05-02 07:04:18', `current_login_at` = '2011-05-02 07:10:58', `login_count` = 4, `last_request_at` = '2011-05-02 07:10:58' WHERE `id` = 1[0m
+  [4;35;1mSQL (36.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/blogs
+Completed in 60ms (DB: 38) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:40:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:10:58', `perishable_token` = 'ADNOqLwRrD5nPtnCAJGl', `last_request_at` = '2011-05-02 07:10:58' WHERE `id` = 1[0m
+  [4;36;1mSQL (33.0ms)[0m   [0;1mCOMMIT[0m
+Completed in 148ms (View: 104, DB: 35) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:41:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;35;1mBlog Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:11:00', `perishable_token` = '7Om4pdbxlcjXu7os9oQP', `last_request_at` = '2011-05-02 07:11:00' WHERE `id` = 1[0m
+  [4;36;1mSQL (28.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mComment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.8ms)
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 85ms (View: 44, DB: 32) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-05-02 12:41:05) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:11:05', `perishable_token` = '6xl9strkRb8CwqMY5Kea', `last_request_at` = '2011-05-02 07:11:05' WHERE `id` = 1[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 54ms (DB: 34) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:41:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 12:41:15) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"temp"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'temp') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:11:15', `perishable_token` = 'eVkFnHctJD030wTVlU5', `last_login_at` = '2011-05-02 07:01:50', `last_login_ip` = '127.0.0.1', `current_login_at` = '2011-05-02 07:11:15', `login_count` = 2, `last_request_at` = '2011-05-02 07:11:15' WHERE `id` = 2[0m
+  [4;36;1mSQL (30.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/blogs
+Completed in 56ms (DB: 33) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:41:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:11:15', `perishable_token` = 'Um91dFlkdBDTlSW06kPh', `last_request_at` = '2011-05-02 07:11:15' WHERE `id` = 2[0m
+  [4;35;1mSQL (44.1ms)[0m   [0mCOMMIT[0m
+Completed in 79ms (View: 26, DB: 46) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:41:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:11:17', `perishable_token` = 'tYBTQFK8mMd2eCZn8MYu', `last_request_at` = '2011-05-02 07:11:17' WHERE `id` = 2[0m
+  [4;35;1mSQL (28.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.9ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 91ms (View: 48, DB: 33) | 200 OK [http://localhost/blogs/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2011-05-02 12:41:30) [POST]
+  Parameters: {"comment"=>{"content"=>"hmmm\r\n:)"}, "commit"=>"Comment", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"comments"}
+  [4;35;1mComment Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:11:30', `perishable_token` = 'kapu5cFnK5jNldUvir', `last_request_at` = '2011-05-02 07:11:30' WHERE `id` = 2[0m
+  [4;36;1mSQL (38.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO `comments` (`created_at`, `updated_at`, `blog_id`, `user_id`, `content`) VALUES('2011-05-02 07:11:30', '2011-05-02 07:11:30', 2, 2, 'hmmm\r\n:)')[0m
+  [4;35;1mSQL (39.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) LIMIT 1[0m
+Redirected to http://localhost:3000/blogs/2
+Completed in 115ms (DB: 81) | 302 Found [http://localhost/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:41:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:11:31', `perishable_token` = 'CNc0U7dYp2TmSdX6oRRm', `last_request_at` = '2011-05-02 07:11:31' WHERE `id` = 2[0m
+  [4;35;1mSQL (52.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (10.4ms)
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 114ms (View: 48, DB: 57) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:41:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:11:42', `perishable_token` = 'NyoD959K9J52gj7m5kI', `last_request_at` = '2011-05-02 07:11:42' WHERE `id` = 2[0m
+  [4;36;1mSQL (29.9ms)[0m   [0;1mCOMMIT[0m
+Completed in 65ms (View: 26, DB: 32) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:45:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 30ms (View: 21, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2011-05-02 12:45:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"comments"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:not_viewable] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:45:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 26ms (View: 17, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:45:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 103ms (View: 94, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-05-02 12:46:51) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:16:51', `perishable_token` = 'jfLDS6zK85hvzSdnV5ZK', `last_request_at` = '2011-05-02 07:16:51' WHERE `id` = 2[0m
+  [4;36;1mSQL (52.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 79ms (DB: 54) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:46:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 27ms (View: 12, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-05-02 12:46:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.7ms)
+Completed in 96ms (View: 15, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-05-02 12:47:08) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"dd", "email"=>"ddd"}}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'ddd') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'dd') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'cf6573d90d51b578ae9e5a7ae616a11dbe449029944b9261e661e0d741a7caf1b583ae6373247e18e66a94caef84df498d57ad59d6aebb4ec8b5f2fd23bac4ac') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'DQjrfGZLjajUNOSzwxp0') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (7.2ms)
+Completed in 44ms (View: 20, DB: 2) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 12:48:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 22ms (View: 8, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 12:48:57) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"[FILTERED]", "login"=>"anandm"}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'anandm') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:18:57', `perishable_token` = 'mv6YAzunytsIvTRl9CX', `last_login_at` = '2011-05-02 07:10:58', `current_login_at` = '2011-05-02 07:18:57', `login_count` = 5, `last_request_at` = '2011-05-02 07:18:57' WHERE `id` = 1[0m
+  [4;35;1mSQL (48.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/blogs
+Completed in 78ms (DB: 50) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:48:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:18:57', `perishable_token` = 'g6V47y2ly0S3UY5plabb', `last_request_at` = '2011-05-02 07:18:57' WHERE `id` = 1[0m
+  [4;36;1mSQL (47.4ms)[0m   [0;1mCOMMIT[0m
+Completed in 105ms (View: 39, DB: 50) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:49:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:19:03', `perishable_token` = 'JQ4a2dYxHvnus3EySQt', `last_request_at` = '2011-05-02 07:19:03' WHERE `id` = 1[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mCOMMIT[0m
+Completed in 137ms (View: 96, DB: 34) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2011-05-02 12:49:05) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"blogs"}
+  [4;36;1mBlog Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering blogs/show
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 07:19:05', `perishable_token` = 'jzdPatR7wy2XTD7Syy3T', `last_request_at` = '2011-05-02 07:19:05' WHERE `id` = 1[0m
+  [4;35;1mSQL (35.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mComment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered blogs/_comment_form (9.7ms)
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.blog_id = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 89ms (View: 42, DB: 39) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 12:49:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 07:19:13', `perishable_token` = 'efEXyWtdNgr2Z5zg8R0I', `last_request_at` = '2011-05-02 07:19:13' WHERE `id` = 1[0m
+  [4;36;1mSQL (53.8ms)[0m   [0;1mCOMMIT[0m
+Completed in 168ms (View: 31, DB: 56) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBlog Load (0.5ms)[0m   [0;1mSELECT * FROM `blogs` [0m
+  [4;35;1mBlog Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM `blogs` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2011-05-02 13:40:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"blogs"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 08:10:36', `perishable_token` = 'oFhN0f0Il4DD7dh28P4E', `last_request_at` = '2011-05-02 08:10:36' WHERE `id` = 1[0m
+  [4;35;1mSQL (52.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+Rendering template within layouts/application
+Rendering blogs/new
+Rendered blogs/_form (4.8ms)
+Completed in 92ms (View: 11, DB: 55) | 200 OK [http://localhost/blogs/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2011-05-02 13:40:37) [POST]
+  Parameters: {"commit"=>"Save changes", "blog"=>{"title"=>"", "content"=>""}, "action"=>"create", "authenticity_token"=>"/5cm1czWGOouaw5eleiArmdhzHN0uJA+q9h91GfPKkU=", "controller"=>"blogs"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 08:10:37', `perishable_token` = 'itncVa3658yoDqL2dT', `last_request_at` = '2011-05-02 08:10:37' WHERE `id` = 1[0m
+  [4;35;1mSQL (63.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT `blogs`.id FROM `blogs` WHERE (`blogs`.`title` = BINARY '') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering blogs/new
+Rendered blogs/_form (10.0ms)
+Completed in 188ms (View: 16, DB: 66) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 13:40:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;35;1mBlog Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-05-02 08:10:43', `perishable_token` = 'SgVGAWwfZWbttWxNangO', `last_request_at` = '2011-05-02 08:10:43' WHERE `id` = 1[0m
+  [4;36;1mSQL (50.8ms)[0m   [0;1mCOMMIT[0m
+Completed in 106ms (View: 30, DB: 54) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (23.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2011-05-02 15:15:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"blogs"}
+  [4;35;1mBlog Load (134.8ms)[0m   [0mSELECT * FROM `blogs` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering blogs/index
+  [4;36;1mBlog Columns (155.9ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mUser Columns (11.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (206.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-05-02 09:45:12', `perishable_token` = 'IWiGY3vNCVgd8cauAIhT', `last_request_at` = '2011-05-02 09:45:11' WHERE `id` = 1[0m
+  [4;35;1mSQL (47.3ms)[0m   [0mCOMMIT[0m
+Completed in 3833ms (View: 2611, DB: 580) | 200 OK [http://localhost/blogs]
