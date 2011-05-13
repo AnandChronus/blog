@@ -1,0 +1,8 @@
+# TODO Operate on the page object
+
+if @invalid == true
+  page.alert("Comment cannot be blank")
+else
+  page.insert_html :top, 'all_comments', :partial => 'blogs/comment_show', :object => @comment
+  page.replace_html 'comment_form', :partial => 'blogs/comment_form'
+end

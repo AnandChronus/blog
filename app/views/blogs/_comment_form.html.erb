@@ -1,9 +1,25 @@
-<% form_for((nc = Comment.new)) do |f| %>
-  <%= f.error_messages %>
+<div id="comment_form">
+<% if current_user == nil %>
 
-  <p>
-    <%= f.text_area :content, :rows => 2, :cols => 120 %>
-<% nc.blog_id = @blog.id %><br />
-    <%= f.submit 'Comment' %>
-  </p>
+  <% form_for((nc = Comment.new)) do |f| %>
+    <!-- <%= f.error_messages %> -->
+
+    <p>
+      <%= f.text_area :content, :rows => 2, :cols => 120, :placeholder => "Login and type your comment here" %>
+      <% nc.blog_id = @blog.id %><br />
+      <%= f.submit 'Comment' %>
+    </p>
+  <% end %>
+
+<% else %>
+
+  <% #form_remote_tag :url => { :controller => :comment, :action => :create, :method => :post, :id => "posts_common"} do  %>
+  <% form_remote_tag(:url => comments_path, :method => :post) do %>
+    <p>
+      <%= text_area_tag :content, nil, :rows => 2, :cols => 120, :placeholder => "Type your comment here" %>
+      <br />
+      <%= submit_tag 'Comment', :remote => true %>
+    </p>
+  <% end %>
 <% end %>
+</div>

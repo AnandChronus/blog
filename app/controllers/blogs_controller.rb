@@ -1,9 +1,11 @@
 class BlogsController < ApplicationController
   before_filter :require_user, :except => [:index, :show]
+
   # GET /blogs
   # GET /blogs.xml
   def index
     @blogs = Blog.all(:order => "created_at DESC")
+    @blogs_p = Blog.all(:order => "rating DESC")
     session[:user_id] = 0
 
     respond_to do |format|
@@ -16,7 +18,13 @@ class BlogsController < ApplicationController
   # GET /blogs/1.xml
   def show
     @blog = Blog.find(params[:id])
+    @blog_comments = []
+    @blog.comments.all(:order => "created_at DESC").each do |c|
+      @blog_comments << c if c.root?
+    end
     session[:blog_id] = @blog.id
+    @top = @blog_comments.count
+    @top = (@top.even?) ? 1 : 0
 
     respond_to do |format|
       format.html # show.html.erb
@@ -91,6 +99,30 @@ class BlogsController < ApplicationController
     @blog.rating += 1
     @blog.save
     redirect_to @blog
+  end
+
+  def show_reply
+    @idname = "r2r_#{params[:id]}"
+    @id = params[:id]
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def hide_reply
+    @idname = "r2r_#{params[:id]}"
+    @id = params[:id]
+    @comment = Comment.find_by_id(@id)
+    @blog = Blog.find(@comment.blog_id)
+    @blog_comments = []
+    @blog.comments.all(:order => "created_at DESC").each do |c|
+      @blog_comments << c if c.root?
+    end
+    @top = @blog_comments.count
+    @top = (@top.even?) ? 1 : 0
+    respond_to do |format|
+      format.js
+    end
   end
 
 end

@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :not_viewable, :except => :create
+  before_filter :not_viewable, :except => [:create, :destroy, :create_reply, :show_reply]
 
   # GET /comments
   # GET /comments.xml
@@ -41,24 +41,67 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  # POST /comments
-  # POST /comments.xml
-  def create
-    @comment = Comment.new(params[:comment])
+  def create_reply
+    @comment = Comment.new(:content => params[:content])
+    @parent_id = params[:cid]
+    @parent_comment = Comment.find_by_id(@parent_id)
     if current_user != nil
       @comment.user_id = current_user.id;
-    else 
+    else
       redirect_to new_user_session_path
-      return 
+      return
     end
     @comment.blog_id = session[:blog_id]
 
     respond_to do |format|
       if @comment.save
+        @invalid = false
+        @comment.move_to_child_of @parent_comment
+
+        @blog = Blog.find(@comment.blog_id)
+        @blog_comments = []
+        @blog.comments.all(:order => "created_at DESC").each do |c|
+          @blog_comments << c if c.root?
+        end
+        @top = @blog_comments.count
+        @top = (@top.even?) ? 1 : 0
+
+        format.js
+      else
+        @invalid = true
+        format.js
+      end
+    end
+  end
+  # POST /comments
+  # POST /comments.xml
+  def create
+    @comment = Comment.new(:content => params[:content])
+    #@comment.content = params[:content]
+    if current_user != nil
+      @comment.user_id = current_user.id;
+    else
+      redirect_to new_user_session_path
+      return 
+    end
+    @comment.blog_id = session[:blog_id]
+    @blog_root_comments = []
+    Blog.find_by_id(@comment.blog_id).comments.all(:order => "created_at DESC").each do |c|
+      @blog_root_comments << c if c.root?
+    end
+    @top = @blog_root_comments.count
+    @top = (@top.even?) ? 0 : 1
+
+    respond_to do |format|
+      if @comment.save
+        @invalid = false
+        format.js
         format.html { redirect_to(Blog.find_by_id(@comment.blog_id)) }
         format.xml  { render :xml => @comment.blog_id, :status => :created, :location => @comment }
       else
-        format.html { render :action => "new" }
+        @invalid = true
+        format.js
+        format.html { redirect_to(Blog.find_by_id(@comment.blog_id), :notice => 'Comment cannot be blank') }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end
@@ -84,10 +127,24 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.xml
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    bid = @comment.blog_id
+
+    @comment.deleted_parent = true
+    @comment.save
+    @comment = Comment.find(params[:id])
+    @comment.content = '<-deleted->'
+    @comment.save
+    c1 = @comment
+    while !c1.nil? and c1.leaf? do
+      cp = c1.parent if !c1.parent.nil?
+      cp = cp.nil? ? nil : cp.deleted_parent ? cp : nil
+      c1.destroy
+      c1 = (cp.nil?)? nil : Comment.find_by_id(cp.id)
+    end
+    #end while @com_par.deleted_parent == false and @com_par.leaf?
 
     respond_to do |format|
-      format.html { redirect_to(comments_url) }
+      format.html { redirect_to(Blog.find_by_id(bid)) }
       format.xml  { head :ok }
     end
   end

@@ -1,0 +1,98 @@
+<% if local_assigns[:cancel].nil? %>
+  <div class="<%= @top == 1 ? 'list_line_odd' : 'list_line_even' %>" id="posts_common" >
+    <% if comment_show.leaf? %>
+      <div id="r2r_<%= comment_show.id %>">
+        <% if comment_show.deleted_parent %>
+          <% if comment_show.user_id? %>
+        <em><%= User.find_by_id(comment_show.user_id).login %> has deleted this comment.<br/></em>
+          <% end %>
+        <% else %>
+          <% if comment_show.user_id? %>
+            <%= User.find_by_id(comment_show.user_id).login %> said:<br/>
+          <% end %>
+          <em> <%= simple_format(auto_link(comment_show.content)) %></em>
+          <small>At <%= comment_show.updated_at.to_s.gsub(/ UTC.*/,"") %>
+            <% if current_user != nil and comment_show.user_id == current_user.id %>
+              | <%= link_to 'Delete', comment_show, :confirm => 'Do you want to delete this comment?', :method => :delete, :controller => "comments" %>
+            <% end %>
+            <% if current_user == nil %>
+              <%= link_to 'Reply', new_blog_path %>
+            <% else %>
+              | <%= link_to_remote 'Reply', :url => { :controller => 'blogs', :action => 'show_reply', :id => comment_show.id } %>
+            <% end %>
+          </small>
+        <% end %>
+      </div>
+    <% else %>
+      <% comment_show.self_and_descendants.each do |c| %>
+        <div id="r2r_<%= c.id %>">
+          <!-- <p style="margin-left: <%= get_indent_percentage c.level %> %; padding: 10px 10px 10px 10px; border-top: 2px inherit solid; border-left: 2px green solid;"> -->
+          <p style="margin-left: <%= get_indent_percentage c.level %>%;">
+        <% if c.deleted_parent %>
+          <% if c.user_id? %>
+            <em><%= User.find_by_id(c.user_id).login %> has deleted this comment.<br /></em>
+          <% end %>
+        <% else %>
+          <% if c.user_id? %>
+            <% if c.parent == nil %>
+                 <%= User.find_by_id(c.user_id).login %> said:<br/>
+               <% else %>
+                 <%= User.find_by_id(c.user_id).login %> replied to <%= User.find_by_id(c.parent.user_id).login %>'s comment
+                 (<% if c.parent.content.length < 16 %><%= c.parent.content %><% else %><%= c.parent.content.slice(0,15) %>...<% end %>):
+               <% end %>
+             <% end %>
+             <em><%= simple_format(auto_link(c.content)) %></em>
+             <small>At <%= c.updated_at.to_s.gsub(/ UTC.*/,"") %>
+             <% if current_user != nil and c.user_id == current_user.id %>
+               | <%= link_to 'Delete', c, :confirm => 'Do you want to delete this comment?', :method => :delete, :controller => "comments" %>
+             <% end %>
+             <% if current_user == nil %>
+               <%= link_to 'Reply', new_blog_path %>
+             <% else %>
+               | <%= link_to_remote 'Reply', :url => { :controller => 'blogs', :action => 'show_reply', :id => c.id } %>
+             <% end %>
+             </small>
+             <% end %>
+             </p>
+             </div>
+             <hr />
+           <% end %> <!-- nested loop ends here -->
+         <% end %>
+         <% @top = (@top == 1 ? 0 : 1) %>
+         </div>
+
+       <% else %>
+
+         <%  c = comment_show %>
+         <div id="r2r_<%= c.id %>">
+          <!-- <p style="margin-left: <%= get_indent_percentage c.level %> %; padding: 10px 10px 10px 10px; border-top: 2px inherit solid; border-left: 2px green solid;"> -->
+    <p style="margin-left: <%= get_indent_percentage c.level %>%;">
+               <% if c.deleted_parent %>
+          <% if c.user_id? %>
+            <em><%= User.find_by_id(c.user_id).login %> has deleted this comment.<br /></em>
+          <% end %>
+        <% else %>
+       <% if c.user_id? %>
+         <% if c.parent == nil %>
+           <%= User.find_by_id(c.user_id).login %> said:<br/>
+         <% else %>
+           <%= User.find_by_id(c.user_id).login %> replied to <%= User.find_by_id(c.parent.user_id).login %>'s comment
+           (<% if c.parent.content.length < 11 %><%= c.parent.content %><% else %><%= c.parent.content.slice(0,10) %>...<% end %>):
+         <% end %>
+       <% end %>
+       <em><%= simple_format(auto_link(c.content)) %></em>
+       <small>At <%= c.updated_at.to_s.gsub(/ UTC.*/,"") %>
+       <% if current_user != nil and c.user_id == current_user.id %>
+         | <%= link_to 'Delete', c, :confirm => 'Do you want to delete this comment?', :method => :delete, :controller => "comments" %>
+       <% end %>
+       <% if current_user == nil %>
+         <%= link_to 'Reply', new_blog_path %>
+       <% else %>
+         | <%= link_to_remote 'Reply', :url => { :controller => 'blogs', :action => 'show_reply', :id => c.id } %>
+       <% end %>
+       </small>
+       <% end %>
+       </p>
+       </div>
+
+     <% end  %>

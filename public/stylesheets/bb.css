@@ -88,7 +88,7 @@ div.blog_show_comments_section {
 }
 
 #posts_common {
-    padding: 10px 10px 10px 10px;
+    padding: 15px 15px 15px 30px;
     width: 99%;
     border: solid white;
 }
@@ -110,4 +110,75 @@ div.user_nav a{
 
 .fieldWithErrors input {
     border: 1px solid red;
+}
+
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+  height: 1%;
+}
+
+* + html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+
+.img {
+    float: left;
+}
+
+.lnk {
+    float: left;
+border-left: 1px solid;
+    margin-left: 5px;
+    margin-top: 6px;
+    padding-left: 5px;
+}
+
+.lnk_first {
+        float: left;
+    margin-left: 5px;
+    margin-top: 6px;
+    padding-left: 5px;
+}
+
+#all_comments {
+    
+}
+
+.reply_form {
+    padding: 0px 0px 0px 0px;
+}
+
+.inner_reply_form {
+    padding: 0px 0px 0px 160px;
+    margin: 0px 0px 0px 0px;
+}
+
+#comment_form {
+    
+}
+
+.comment_text {
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    font-size: 1.2em;
+    font-family: Arial;
 }
