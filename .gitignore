@@ -1,0 +1,22 @@
+*.log
+.tmp_*
+public/images/Thumbs.db
+public/images/active_scaffold/*
+public/javascripts/active_scaffold/*
+test/fixtures/files/Thumbs.db
+db/development_structure.sql
+db/test_structure.sql
+nbproject
+coverage
+coverage.data
+schema.rb
+tmp
+vim session
+public/javascripts/active_scaffold/default/active_scaffold.js
+db/sphinx
+config/*.sphinx.conf
+log/*.pid
+kea/testdocs/en/test/input*.key
+kea/testdocs/en/test/input*.txt
+config/locales/hi.yml
+config/locales/log
