@@ -1,0 +1,4 @@
+# TODO Operate on the page object
+#page.replace_html 'all_comments', :partial => "comment_show", :collection => @blog_comments
+
+page.replace_html @idname, :partial => "comment_show", :object => @comment, :locals => { :cancel => 'yes' }

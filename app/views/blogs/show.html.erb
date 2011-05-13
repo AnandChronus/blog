@@ -1,33 +1,37 @@
 <div class="blog_show">
-  <h2 class="blog_show" ><%=h @blog.title -%></h2><% if @blog.user_id? %>
-    By <%= (User.find_by_id(@blog.user_id)).login %><% end %>
+  <h2 class="blog_show" ><%=h @blog.title -%></h2>
+  <span>
+    <% if @blog.user_id? %>
+      By <%= (User.find_by_id(@blog.user_id)).login %>,
+      <% end%><small>
+    at <%= @blog.updated_at.to_s.gsub(/ UTC.*/,"")%>
+    (<%= @blog.rating %><%= image_tag "star.gif", :id => "nob", :width => 12, :height => 12 %>)</small>
+  </span>
   <hr class="blog_show" />
   <p>
-    <%= simple_format(auto_link(@blog.content)) %>
+    <% simple_format(auto_link(@blog.content)) %>
+    <%= (@blog.content) %>
   </p>
   <br />
   <br />
   <% if current_user != nil %>
-  <% if @blog.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_blog_path(@blog) %> |
-    <%= link_to 'Delete', @blog, :confirm => 'Are you sure?', :method => :delete %> |
-  <% end %>
+    <% if @blog.user_id == current_user.id %>
+      <div class="clearfix">
+        <%= link_to 'Edit', edit_blog_path(@blog), :class => 'lnk_first' %>
+        <%= link_to 'Delete', @blog, :class => 'lnk', :confirm => 'Are you sure?', :method => :delete %>
+      <% else %>
+        <% form_tag :action => :inc_rating do %>
+          <div class="clearfix">
+            <%= image_tag "t-up.jpg", :class => 'img' %>
+          <% end %>
+        <% end %>
+        <%= link_to 'Back', blogs_path, :class => 'lnk' %>
+      </div>
     <% end %>
-  <%= link_to 'Back', blogs_path %>
-</div>
-
+</div>  
 <div class="blog_show_comments_section">
   <%= render 'comment_form' %>
 </div>
-<table>
-  <% @blog.comments.all(:order => "created_at DESC").each do |c| %>
-    <div class="<%= cycle('list_line_odd' , 'list_line_even' ) %>" id="posts_common" >
-      <% if c.user_id? %>
-        <%= User.find_by_id(c.user_id).login %> said:<br/>
-      <% end %>
-      <blockquote><em><%= simple_format(auto_link(c.content)) %></em></blockquote>
-      <small>At <%= c.updated_at.to_s.gsub(/ UTC.*/,"") %>
-      </small>
-    </div>
-  <% end %>
-</table>
+  <div id="all_comments">
+  <%= render :partial => 'comment_show', :collection => @blog_comments %>
+  </div>

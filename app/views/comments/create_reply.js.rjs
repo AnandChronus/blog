@@ -1,0 +1,6 @@
+# TODO Operate on the page object
+if @invalid == true
+  page.alert("Comment cannot be blank")
+else
+  page.replace_html 'all_comments', :partial => "blogs/comment_show", :collection => @blog_comments
+end

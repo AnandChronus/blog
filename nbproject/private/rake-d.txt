@@ -41,6 +41,7 @@ doc\:clobber_plugins=Remove plugin documentation
 doc\:clobber_rails=Remove rdoc products
 doc\:guides=Generate Rails guides
 doc\:plugins=Generate documentation for all installed plugins
+doc\:plugins\:tinymce_hammer=Generate documentation for the tinymce_hammer plugin
 doc\:rails=Build the RDOC HTML Files
 doc\:reapp=Force a rebuild of the RDOC files
 doc\:rerails=Force a rebuild of the RDOC files
@@ -86,6 +87,7 @@ test\:units=Run tests for unitsdb:test:prepare / Run the unit tests in test/unit
 time\:zones\:all=Displays names of all time zones recognized by the Rails TimeZone class, grouped by offset. Results can be filtered with optional OFFSET parameter, e.g., OFFSET=-6
 time\:zones\:local=Displays names of time zones recognized by the Rails TimeZone class with the same offset as the system local time
 time\:zones\:us=Displays names of US time zones recognized by the Rails TimeZone class, grouped by offset. Results can be filtered with optional OFFSET parameter, e.g., OFFSET=-6
+tinymce\:cache_js=
 tmp\:cache\:clear=Clears all files and directories in tmp/cache
 tmp\:clear=Clear session, cache, and socket files from tmp/
 tmp\:create=Creates tmp directories for sessions, cache, sockets, and pids

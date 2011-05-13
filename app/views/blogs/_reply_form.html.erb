@@ -1,0 +1,13 @@
+<br />
+<div class="reply_form" style="margin-left: <%= get_indent_percentage Comment.find_by_id(cid).level %>%;" >
+<% form_remote_tag(:url => {:controller => 'comments', :action => 'create_reply', :cid => cid}, :method => :post) do %>
+    <%= text_area_tag :content, nil, :rows => 2, :cols => 60, :placeholder => "Type your comment here" %>
+    <br />    
+  <div class="inner_reply_form">
+    <small>
+      <%= submit_tag 'Reply', :remote => true %> |
+      <%= link_to_remote 'Cancel', :url => { :action => 'hide_reply', :id => cid } %>
+    </small>
+  </div>
+<% end %>
+</div>

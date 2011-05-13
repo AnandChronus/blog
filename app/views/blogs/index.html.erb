@@ -1,9 +1,23 @@
-<h1>Most recent blogs:</h1>
+<h1>Most Recent blogs:</h1>
 <ul>
 <% @blogs.each do |blog| %>
 <b>
   <li>
-  <%= link_to blog.title, blog %>
+  <%= link_to "#{blog.title}", blog %>
+  </li>
+</b>
+<% end %>
+</ul>
+<br />
+
+<h1>Most Popular blogs:</h1>
+<ul>
+<% @blogs_p.each do |blog| %>
+<b>
+  <li>
+  <% link_to blog do %>
+    <span><%= blog.title %> - [<%=  blog.rating %><%= image_tag "star.gif", :id => "nob" %>]</span>
+  <% end %>
   </li>
 </b>
 <% end %>
@@ -11,3 +25,4 @@
 <br />
 
 <%= link_to 'New blog', new_blog_path %>
+
